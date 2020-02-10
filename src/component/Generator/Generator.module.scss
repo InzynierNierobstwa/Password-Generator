@@ -1,0 +1,13 @@
+.generatContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 70px - 250px);
+}
+
+.generatContainer__input {
+  margin: 20px 0;
+}
+
+.generatContainer__button {
+  width: 200px;
+}

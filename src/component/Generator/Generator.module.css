@@ -1,0 +1,19 @@
+.generatContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: calc(100vh - 70px - 250px);
+}
+
+.generatContainer__input {
+  margin: 20px 0;
+}
+
+.generatContainer__button {
+  width: 200px;
+}
+/*# sourceMappingURL=Generator.module.css.map */

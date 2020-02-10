@@ -1,0 +1,9 @@
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.footerContainer__linkContainer a {
+  padding: 0 10px;
+}

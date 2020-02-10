@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAC;EAChB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,UAAU,EAAE,0BAA0B;CACvC;;AAED,AAAA,wBAAwB,CAAC;EACvB,MAAM,EAAE,MAAM;CACf;;AAED,AAAA,yBAAyB,CAAC;EACxB,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "Generator.module.scss"
+    ],
+    "names": [],
+    "file": "Generator.module.css"
+}

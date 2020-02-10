@@ -1,0 +1,19 @@
+.headerContainer {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 150px;
+}
+
+.headerContainer__text {
+  text-align: justify;
+  font-size: 2em;
+}
+
+.headerContainer__img {
+  width: 50px;
+  margin: 0 30px;
+}
