@@ -15,18 +15,18 @@ The project was designed to learn React from scratch.
 
 Using npm
 
-* React installation
-`'$ npx create-react-app .'`
+* React installation  
+`'$ npx create-react-app .'`  
 `'npm start'`
 
-* Sass installation [only for contributors]
+* Sass installation [only for contributors]  
 `'npm install node-sass'`
 
-* fontawesome installation
-`'$ npm i --save @fortawesome/fontawesome-svg-core'`
-`'$ npm i --save @fortawesome/free-solid-svg-icons'`
-`'$ npm i --save @fortawesome/free-brands-svg-icons'`
-`'$ npm i --save @fortawesome/react-fontawesome'`   
+* fontawesome installation  
+`'$ npm i --save @fortawesome/fontawesome-svg-core'`  
+`'$ npm i --save @fortawesome/free-solid-svg-icons'`  
+`'$ npm i --save @fortawesome/free-brands-svg-icons'`  
+`'$ npm i --save @fortawesome/react-fontawesome'`  
 
 ## General Info
 This project will proceed simple password. Application is able to introduce three different features.
