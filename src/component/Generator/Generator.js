@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Generator.module.css";
 
-const Generator = props => {
+const Generator = ({ submitFn }, props) => {
   return (
     <form className={styles.generatContainer}>
       <div className={styles.generatContainer__input}>
         <label name="length">Password Length:</label>
-        <input type="range" name="length"></input>
+        <input type="range" min="6" max="32" name="length"></input>
       </div>
       <div className={styles.generatContainer__input}>
         <label name="symbols">Include Symbols:</label>
@@ -28,15 +28,12 @@ const Generator = props => {
         <input type="checkbox" name="uppercaseChar"></input>
         <label name="uppercaseChar"> ( e.g. ABCDEFGH ) </label>
       </div>
-      <button className={styles.generatContainer__button}>
+      <button className={styles.generatContainer__button} onClick={submitFn}>
         Generate Password
       </button>
       <div className={styles.generatContainer__input}>
         <label name="newPass">Your New Password:</label>
-        <input
-          type="text"
-          placeholder="Your new password will appear here."
-        ></input>
+        <input type="text" placeholder={props.password}></input>
       </div>
     </form>
   );
