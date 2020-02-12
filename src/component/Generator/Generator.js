@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Generator.module.css";
 
-const Generator = ({ submitFn }, props) => {
+const Generator = ({ submitFn, ...props }) => {
   return (
     <form className={styles.generatContainer}>
       <div className={styles.generatContainer__input}>
@@ -33,7 +33,7 @@ const Generator = ({ submitFn }, props) => {
       </button>
       <div className={styles.generatContainer__input}>
         <label name="newPass">Your New Password:</label>
-        <input type="text" placeholder={props.password}></input>
+        <input type="text" value={props.password}></input>
       </div>
     </form>
   );

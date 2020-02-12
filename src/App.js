@@ -29,7 +29,10 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <Header name="lock" />
-        <Generator submitFn={this.generatePassword} />
+        <Generator
+          submitFn={this.generatePassword}
+          password={this.state.passwordValue}
+        />
         <Footer />
       </div>
     );
