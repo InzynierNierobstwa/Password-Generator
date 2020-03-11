@@ -48,7 +48,7 @@ class App extends React.Component {
     console.log(this.state.rangeValue);
   };
 
-  generatePassword = event => {
+  /*   generatePassword = event => {
     event.preventDefault();
 
     let length = this.state.rangeValue,
@@ -62,6 +62,51 @@ class App extends React.Component {
     console.log(retPass);
     this.setState({ passwordValue: retPass });
     return retPass;
+  }; */
+
+  generatePasswordTwo = event => {
+    event.preventDefault();
+
+    let passLength = this.state.rangeValue;
+    const string = "abcdefghijklmnopqrstuvwxyz";
+    const numeric = "0123456789";
+    const punctuation = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+    let password = "";
+    let character = "";
+
+    let checkboxArray = [];
+    Object.keys(this.state.checkboxes)
+      .filter(checkbox => this.state.checkboxes[checkbox])
+      .forEach(checkbox => {
+        checkboxArray.push(checkbox);
+      });
+    console.log(checkboxArray);
+
+    while (password.length < passLength) {
+      const entity1 = Math.ceil(string.length * Math.random() * Math.random());
+      const entity2 = Math.ceil(numeric.length * Math.random() * Math.random());
+      const entity3 = Math.ceil(
+        punctuation.length * Math.random() * Math.random()
+      );
+
+      let hold = string.charAt(entity1);
+      hold = password.length % 2 === 0 ? hold.toUpperCase() : hold;
+
+      character = character + hold;
+      character = character + numeric.charAt(entity2);
+      character = character + punctuation.charAt(entity3);
+      password = character;
+    }
+
+    password = password
+      .split("")
+      .sort(function() {
+        return 0.5 - Math.random();
+      })
+      .join("");
+    let finishPass = password.substr(0, passLength);
+    this.setState({ passwordValue: finishPass });
+    return finishPass;
   };
 
   createCheckbox = option => (
@@ -80,7 +125,12 @@ class App extends React.Component {
       <div className={styles.container}>
         <Header />
         <Slider rangeFn={this.getRange} />
-        <form onSubmit={this.handleFormSubmit}>
+        <form
+          onSubmit={event => {
+            this.handleFormSubmit(event);
+            this.generatePasswordTwo(event);
+          }}
+        >
           {this.createCheckboxes()}
           <Input password={this.state.passwordValue} />
           <button type="submit" className={styles.button}>
