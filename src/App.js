@@ -6,7 +6,7 @@ import Slider from "./component/Slider/Slider";
 import Input from "./component/Input/Input";
 import styles from "./App.module.css";
 
-const CheckboxOptions = ["symbols", "numbers", "lowercase", "uppercase"];
+const CheckboxOptions = ["numbers", "uppercase", "symbols"];
 
 class App extends React.Component {
   state = {
@@ -48,22 +48,6 @@ class App extends React.Component {
     console.log(this.state.rangeValue);
   };
 
-  /*   generatePassword = event => {
-    event.preventDefault();
-
-    let length = this.state.rangeValue,
-      charset =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-      retPass = "";
-    for (let i = 0, n = charset.length; i < length; ++i) {
-      retPass += charset.charAt(Math.floor(Math.random() * n));
-    }
-
-    console.log(retPass);
-    this.setState({ passwordValue: retPass });
-    return retPass;
-  }; */
-
   generatePasswordTwo = event => {
     event.preventDefault();
 
@@ -89,12 +73,24 @@ class App extends React.Component {
         punctuation.length * Math.random() * Math.random()
       );
 
-      let hold = string.charAt(entity1);
-      hold = password.length % 2 === 0 ? hold.toUpperCase() : hold;
+      character = character + string.charAt(entity1);
 
-      character = character + hold;
-      character = character + numeric.charAt(entity2);
-      character = character + punctuation.charAt(entity3);
+      if (checkboxArray.includes("numbers")) {
+        console.log("numbers");
+        character = character + numeric.charAt(entity2);
+        console.log(character);
+      }
+      if (checkboxArray.includes("uppercase")) {
+        console.log("uppercase");
+        let hold = string.charAt(entity1);
+        hold = password.length % 2 === 0 ? hold.toUpperCase() : hold;
+        character = character + hold;
+        console.log(character);
+      }
+      if (checkboxArray.includes("symbols")) {
+        console.log("symbols");
+        character = character + punctuation.charAt(entity3);
+      }
       password = character;
     }
 
