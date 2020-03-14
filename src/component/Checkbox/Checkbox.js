@@ -1,17 +1,18 @@
 import React from "react";
 import styles from "./Checkbox.module.css";
 
-const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+const Checkbox = ({ label, example, isSelected, onCheckboxChange }) => (
   <div className={styles.checkbox}>
     <label>
       <input
+        className={styles.checkbox__input}
         type="checkbox"
         name={label}
         checked={isSelected}
         onChange={onCheckboxChange}
-        className={styles.checkbox__input}
       />
       {label}
+      {example}
     </label>
   </div>
 );

@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap");
 
 .container {
-  width: 80vh;
-  margin: auto;
+  max-width: 960px;
+  width: 90%;
+  height: 90vh;
+  margin: 20px auto;
   padding: 0;
   font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  border: 10px solid #fff;
+  border-radius: 20px;
+}
+
+.container__form {
+  height: 55%;
 }

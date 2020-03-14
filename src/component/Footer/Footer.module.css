@@ -2,14 +2,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 50px;
-  width: 80vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
-.footerContainer__linkContainer a {
-  padding: 0 10px;
+.footerContainer__link {
+  margin: 0px 5px;
+  color: #222222;
 }
 /*# sourceMappingURL=Footer.module.css.map */

@@ -4,9 +4,11 @@ import Footer from "./component/Footer/Footer";
 import Checkbox from "./component/Checkbox/Checkbox";
 import Slider from "./component/Slider/Slider";
 import Input from "./component/Input/Input";
+import Button from "./component/Button/Button";
 import styles from "./App.module.css";
 
 const CheckboxOptions = ["numbers", "uppercase", "symbols"];
+const CheckboxExample = ["1", "2", "3"];
 
 class App extends React.Component {
   state = {
@@ -64,7 +66,6 @@ class App extends React.Component {
       .forEach(checkbox => {
         checkboxArray.push(checkbox);
       });
-    console.log(checkboxArray);
 
     while (password.length < passLength) {
       const entity1 = Math.ceil(string.length * Math.random() * Math.random());
@@ -76,19 +77,15 @@ class App extends React.Component {
       character = character + string.charAt(entity1);
 
       if (checkboxArray.includes("numbers")) {
-        console.log("numbers");
         character = character + numeric.charAt(entity2);
         console.log(character);
       }
       if (checkboxArray.includes("uppercase")) {
-        console.log("uppercase");
         let hold = string.charAt(entity1);
         hold = password.length % 2 === 0 ? hold.toUpperCase() : hold;
         character = character + hold;
-        console.log(character);
       }
       if (checkboxArray.includes("symbols")) {
-        console.log("symbols");
         character = character + punctuation.charAt(entity3);
       }
       password = character;
@@ -105,6 +102,12 @@ class App extends React.Component {
     return finishPass;
   };
 
+  /*   copyToClipboard = () => {
+    const elem = this.textArea;
+    elem.select();
+    document.execCommand("copy");
+  }; */
+
   createCheckbox = option => (
     <Checkbox
       label={option}
@@ -115,24 +118,23 @@ class App extends React.Component {
   );
 
   createCheckboxes = () => CheckboxOptions.map(this.createCheckbox);
-
   render() {
     return (
       <div className={styles.container}>
         <Header />
-        <Slider rangeFn={this.getRange} />
-        <form
-          onSubmit={event => {
-            this.handleFormSubmit(event);
-            this.generatePasswordTwo(event);
-          }}
-        >
-          {this.createCheckboxes()}
-          <Input password={this.state.passwordValue} />
-          <button type="submit" className={styles.button}>
-            Save
-          </button>
-        </form>
+        <div className={styles.container__form}>
+          <Slider rangeFn={this.getRange} />
+          <form
+            onSubmit={event => {
+              this.handleFormSubmit(event);
+              this.generatePasswordTwo(event);
+            }}
+          >
+            {this.createCheckboxes()}
+            <Input password={this.state.passwordValue} />
+            <Button>Submit</Button>
+          </form>
+        </div>
         <Footer />
       </div>
     );
